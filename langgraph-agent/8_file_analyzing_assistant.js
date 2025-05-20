@@ -388,11 +388,17 @@ async function main() {
   const analyzer = await new FileAnalyzer().initialize();
 
   // Define a sample file to analyze
-  const filePath = "8_file_analyzing_assistant.js";
+  const filePath = "./8_file_analyzing_assistant.js";
 
   try {
     // Analyze the file
     const result = await analyzer.analyzeFile(filePath);
+
+    // check if error
+    if (result.messages.some((m) => m.content.includes("Error loading"))) {
+      console.error("Error loading file.");
+      return;
+    }
 
     // Display the analysis results
     console.log("\n=== File Analysis Results ===\n");
