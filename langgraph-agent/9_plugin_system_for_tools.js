@@ -594,6 +594,7 @@ async function main() {
     "Calculate 15% of 67.80",
     "What time is it now?",
     "Generate a random number between 10 and 50",
+    "What is the capital of Paris?",
   ];
 
   // Process each example query
